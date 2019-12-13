@@ -1,6 +1,6 @@
 {
   "name": "g-spreadsheet-sql",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Get google spreadsheet data by using like SQL",
   "main": "./dist/index.js",
   "types": "./lib/Index.d.ts",
