@@ -1,6 +1,4 @@
-[![CircleCI](https://circleci.com/gh/jupemara/spreadsheet-sql.svg?style=svg)](https://circleci.com/gh/jupemara/spreadsheet-sql)
-
-spreadsheet-sql
+g-spreadsheet-sql
 ====
 
 Getting Google spreadsheet data by using like SQL.
@@ -16,7 +14,7 @@ Install
 ----
 
 ```bash
-$ npm install spreadsheet-sql
+$ npm install g-spreadsheet-sql
 ```
 
 Google Spreadsheet Query Language Specification
@@ -30,7 +28,7 @@ Examples
 ### Public Spreadsheet
 
 ```javascript
-var PublicSpreadsheet = require('spreadsheet-sql').PublicSpreadsheet;
+var PublicSpreadsheet = require('g-spreadsheet-sql').PublicSpreadsheet;
 
 // first argument is spreadsheet key, second argument is worksheet name.
 // spreadsheet key is included spreadsheet URL.
@@ -66,7 +64,7 @@ And also you can get manually Oauth 2.0 refresh token optionally.
 You need to give above 3 values to the constructor of `PrivateSpreadSheet`. From v0.3.0 refresh token became to be optional.
 
 ```javascript
-var PrivateSpreadsheet = require('spreadsheet-sql').PrivateSpreadsheet;
+var PrivateSpreadsheet = require('g-spreadsheet-sql').PrivateSpreadsheet;
 
 var spreadsheet = new PrivateSpreadsheet(
   'SPREADSHEET_KEY',
@@ -123,4 +121,6 @@ npm run build
 License
 ----
 
-WTFPL. haha!
+Apache License.
+
+This is a forked project from jupemara/spreadsheet-sql

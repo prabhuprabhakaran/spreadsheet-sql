@@ -1,6 +1,6 @@
 {
-  "name": "spreadsheet-sql",
-  "version": "0.3.0",
+  "name": "g-spreadsheet-sql",
+  "version": "0.3.1",
   "description": "Get google spreadsheet data by using like SQL",
   "main": "./dist/index.js",
   "types": "./lib/Index.d.ts",
@@ -20,21 +20,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JumpeiArashi/spreadsheet-sql.git"
+    "url": "git+https://github.com/prabhuprabhakaran/spreadsheet-sql.git"
   },
   "keywords": [
     "google",
     "spreadsheet",
     "sql",
     "charts",
-    "visualization"
+    "visualization",
+    "json",
+    "excel"
   ],
-  "author": "JumpeiArashi",
-  "license": "WTFPL",
+  "author": "Prabhu Prabhakaran",
+  "license": "Apache",
   "bugs": {
-    "url": "https://github.com/JumpeiArashi/spreadsheet-sql/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/JumpeiArashi/spreadsheet-sql#readme",
+  "homepage": "",
   "devDependencies": {
     "ava": "^2.3.0",
     "prettier": "^1.18.2",

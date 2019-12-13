@@ -1,5 +1,6 @@
 import {Record} from './Record';
 import {Csv} from './Csv';
+import {Jsonp} from './Jsonp';
 
 export abstract class BaseSpreadsheet {
   constructor(
@@ -7,12 +8,16 @@ export abstract class BaseSpreadsheet {
     private readonly worksheetName: string
   ) {}
 
-  public query(q: string): Promise<Record[]> {
+  public query(q: string, r: string = 'out:json'): Promise<Record[]> {
     return this.request(
       'https://spreadsheets.google.com/tq',
-      this.buildRequestParameters(this.spreadsheetKey, this.worksheetName, q)
+      this.buildRequestParameters(this.spreadsheetKey, this.worksheetName, q, r)
     ).then(res => {
-      return new Csv(res.data).toJson();
+      if (r == 'out:json') {
+        return new Jsonp(res.data).toJson();
+      } else {
+        return new Csv(res.data).toJson();
+      }
     });
   }
 
@@ -24,14 +29,15 @@ export abstract class BaseSpreadsheet {
   private buildRequestParameters(
     spreadsheetKey: string,
     worksheetName: string,
-    query: string
+    query: string,
+    responseType: string
   ): {[k: string]: string | number} {
     return {
       headers: 1,
       key: spreadsheetKey,
       sheet: worksheetName,
       tq: query,
-      tqx: 'out:csv',
+      tqx: responseType,
     };
   }
 }
